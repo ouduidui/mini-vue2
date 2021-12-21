@@ -1,21 +1,21 @@
 {
-  "name": "mini-vue2",
-  "version": "1.0.0",
-  "scripts": {
-    "dev:mini-vue2": "rollup -w -c --sourcemap & browser-sync start --server --files \"dist/** , *.html\"",
-    "build:mini-vue2": "rollup -c"
-  },
-  "description": "手写vue2",
-  "main": "index.js",
-  "repository": "git@github.com:OUDUIDUI/mini.git",
-  "author": "OUDUIDUI",
-  "license": "MIT",
-  "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.7",
-    "browser-sync": "^2.27.1",
-    "rollup": "^2.52.2",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-uglify": "^6.0.4"
-  }
+	"name": "mini-vue2",
+	"version": "1.0.0",
+	"scripts": {
+		"dev:mini-vue2": "rollup -w -c --sourcemap & browser-sync start --server --files \"dist/** , *.html\"",
+		"build:mini-vue2": "rollup -c"
+	},
+	"description": "手写vue2",
+	"main": "index.js",
+	"repository": "git@github.com:OUDUIDUI/mini.git",
+	"author": "OUDUIDUI",
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/core": "^7.14.6",
+		"@babel/preset-env": "^7.14.7",
+		"browser-sync": "^2.27.1",
+		"rollup": "^2.52.2",
+		"rollup-plugin-babel": "^4.4.0",
+		"rollup-plugin-uglify": "^6.0.4"
+	}
 }
