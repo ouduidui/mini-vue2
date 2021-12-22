@@ -8,10 +8,10 @@ import generate from './generate';
  * @returns 渲染函数
  */
 export default function compileToFunction(template) {
-	// 解析模板，生成AST
-	const ast = parse(template);
-	// 将AST生成渲染函数
-	const render = generate(ast);
+  // 解析模板，生成AST
+  const ast = parse(template);
+  // 将AST生成渲染函数
+  const render = generate(ast);
 
-	return render;
+  return render;
 }

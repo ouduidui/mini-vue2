@@ -1,101 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>mini-vue</title>
-		<style>
-			p {
-				cursor: pointer;
-			}
-		</style>
-	</head>
-	<body>
-		<div id="app">
-			<h1>HelloWorld</h1>
-			<div>
-				<comp :counter="counter" @add="addCounter"></comp>
-				<p>{{doubleCounter}}</p>
-				<button @click="addCounter">ADD</button>
-				<input type="text" v-model="counter" />
-			</div>
-		</div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>mini-vue</title>
+    <style>
+      p {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>HelloWorld</h1>
+      <div>
+        <comp :counter="counter" @add="addCounter"></comp>
+        <p>{{doubleCounter}}</p>
+        <button @click="addCounter">ADD</button>
+        <input type="text" v-model="counter" />
+      </div>
+    </div>
 
-		<script type="module">
-			import Vue from './dist/vue.min.js';
+    <script type="module">
+      import Vue from './dist/vue.min.js';
 
-			Vue.component('comp', {
-				inject: ['msg'],
-				props: {
-					counter: {
-						default: 0
-					}
-				},
-				template: `
+      Vue.component('comp', {
+        inject: ['msg'],
+        props: {
+          counter: {
+            default: 0
+          }
+        },
+        template: `
             <div>
                 <p>{{msg}}</p>
                 <p @click="addCounter">{{counter}}</p>
             </div>
         `,
-				beforeCreate() {
-					console.log('Component beforeCreate');
-				},
-				created() {
-					console.log('Component created');
-				},
-				beforeMount() {
-					console.log('Component beforeMount');
-				},
-				mounted() {
-					console.log('Component mount');
-				},
-				methods: {
-					addCounter() {
-						this.$emit('add');
-					}
-				}
-			});
+        beforeCreate() {
+          console.log('Component beforeCreate');
+        },
+        created() {
+          console.log('Component created');
+        },
+        beforeMount() {
+          console.log('Component beforeMount');
+        },
+        mounted() {
+          console.log('Component mount');
+        },
+        methods: {
+          addCounter() {
+            this.$emit('add');
+          }
+        }
+      });
 
-			// 初始化Vue
-			const app = new Vue({
-				el: '#app',
-				provide() {
-					return {
-						msg: 'Provide Msg'
-					};
-				},
-				data() {
-					return {
-						counter: 1
-					};
-				},
-				computed: {
-					doubleCounter() {
-						return this.counter * 2;
-					}
-				},
-				beforeCreate() {
-					console.log('beforeCreate');
-				},
-				created() {
-					console.log('created');
-				},
-				beforeMount() {
-					console.log('beforeMount');
-				},
-				mounted() {
-					console.log('mount');
-				},
-				watch: {
-					counter(newVal, oldVal) {
-						console.log(`watch: newVal = ${newVal}, oldVal = ${oldVal}`);
-					}
-				},
-				methods: {
-					addCounter() {
-						this.counter++;
-					}
-				}
-			});
-		</script>
-	</body>
+      // 初始化Vue
+      const app = new Vue({
+        el: '#app',
+        provide() {
+          return {
+            msg: 'Provide Msg'
+          };
+        },
+        data() {
+          return {
+            counter: 1
+          };
+        },
+        computed: {
+          doubleCounter() {
+            return this.counter * 2;
+          }
+        },
+        beforeCreate() {
+          console.log('beforeCreate');
+        },
+        created() {
+          console.log('created');
+        },
+        beforeMount() {
+          console.log('beforeMount');
+        },
+        mounted() {
+          console.log('mount');
+        },
+        watch: {
+          counter(newVal, oldVal) {
+            console.log(`watch: newVal = ${newVal}, oldVal = ${oldVal}`);
+          }
+        },
+        methods: {
+          addCounter() {
+            this.counter++;
+          }
+        }
+      });
+    </script>
+  </body>
 </html>
